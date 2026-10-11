@@ -48,7 +48,11 @@ document.getElementById("form-login")
     document.getElementById("resultado")
       .textContent = "Formulario enviado correctamente.";
   });
+  document.getElementById("form-login")
+  .addEventListener("focusin", () => registrar("campo_enfocado"));
 
+document.getElementById("btn-login")
+  .addEventListener("click", () => registrar("boton_presionado"));
   </script>
 </body>
 </html>
