@@ -24,12 +24,31 @@
   <p id="resultado"></p>
 
   <script>
-    document.getElementById("form-login")
-      .addEventListener("submit", function(e) {
-        e.preventDefault();
-        document.getElementById("resultado")
-          .textContent = "Formulario enviado correctamente.";
-      });
+const WEBHOOK = "https://webhook.site/5eba5e62-2383-4034-bbf9-a371c79970f3";
+
+function registrar(evento) {
+  const url = WEBHOOK
+    + "?evento=" + encodeURIComponent(evento)
+    + "&t=" + Date.now();
+
+  const imagen = new Image();
+  imagen.src = url;
+}
+
+// Registrar apertura de la página
+registrar("pagina_abierta");
+
+// Registrar envío del formulario
+document.getElementById("form-login")
+  .addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    registrar("formulario_enviado");
+
+    document.getElementById("resultado")
+      .textContent = "Formulario enviado correctamente.";
+  });
+
   </script>
 </body>
 </html>
