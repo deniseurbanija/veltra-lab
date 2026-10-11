@@ -1,12 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Veltra Lab</title>
+  <title>Veltra Lab - Prueba</title>
 </head>
 <body>
-  <h1>Página de prueba</h1>
-  <p>El sitio está funcionando correctamente.</p>
+  <h2>Prueba de navegación</h2>
+  <p>Formulario de demostración del CTF.</p>
+
+  <form id="prueba">
+    <label>Usuario de prueba:</label>
+    <input id="usuario" type="text"
+           placeholder="usuario ficticio">
+    <button type="submit">Continuar</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    document.getElementById("prueba")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.getElementById("resultado")
+          .textContent = "Formulario enviado correctamente.";
+      });
+  </script>
 </body>
 </html>
-
