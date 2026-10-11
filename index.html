@@ -9,17 +9,22 @@
   <h2>Prueba de navegación</h2>
   <p>Formulario de demostración del CTF.</p>
 
-  <form id="prueba">
-    <label>Usuario de prueba:</label>
-    <input id="usuario" type="text"
-           placeholder="usuario ficticio">
-    <button type="submit">Continuar</button>
-  </form>
+      <form id="form-login" autocomplete="off">
+        <div class="field">
+          <label for="txt-login">Usuario</label>
+          <input id="txt-login" name="txtLogin" type="text" placeholder="nombre.apellido" autofocus>
+        </div>
+        <div class="field">
+          <label for="txt-password">Contrasena</label>
+          <input id="txt-password" name="txtPassword" type="password" placeholder="••••••••••">
+        </div>
+        <button id="btn-login" type="submit" class="btn">Continuar</button>
+      </form>
 
   <p id="resultado"></p>
 
   <script>
-    document.getElementById("prueba")
+    document.getElementById("form-login")
       .addEventListener("submit", function(e) {
         e.preventDefault();
         document.getElementById("resultado")
